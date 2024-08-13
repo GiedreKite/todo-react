@@ -3,7 +3,7 @@ import { useState } from "react";
 export function FormCreateTask(params) {
     const {addTaskCallback} =params;
     const [task, setTask] = useState('');
-    const [color, setColor] = useState('');
+    const [color, setColor] = useState('#ff0000');
 
     function handleFormSubmit(e) {
         e.preventDefault();
@@ -11,7 +11,7 @@ export function FormCreateTask(params) {
         if (task.trim() === "") {
             return;
         }
-        addTaskCallback(task);
+        addTaskCallback(task,color);
     }
    
 

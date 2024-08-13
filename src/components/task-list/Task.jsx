@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export function Task(params) {
     const { removeTask, data } = params;
-    const { text } = data;
+    const { text, color } = data;
 
     const [taskVisibility, setTaskVisibility] = useState(true);
     const [taskDone, setTaskDone] = useState(false);
@@ -10,7 +10,7 @@ export function Task(params) {
     const [taskText, setTaskText] = useState(text);
     const [inputText, setInputText] = useState(text);
     const style = {
-        borderLeftColor: '#ff0000',
+        borderLeftColor: color ? color: '#ff0000',
     };
 
     function handleUpdate(e) {

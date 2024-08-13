@@ -8,16 +8,17 @@ import { ListActions } from "./components/list-actions/ListActions.jsx";
 function App() {
   const [taskList, setTaskList] = useState(tasks);
 
-  function addTask(taskText) {
+  function addTask(taskText, taskColor) {
     setTaskList(prev => [
       ...prev,
       {
         text: taskText,
+        color: taskColor,
       },
     ]);
   }
 
-  function removeTask(taskText) {
+  function removeTask(taskText, taskColor) {
     setTaskList(prev => prev.filter(task => task.text !== taskText));
   }
 

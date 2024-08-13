@@ -1,8 +1,7 @@
-
 import { Task } from "./Task";
 
 export function TaskList(params) {
-    const { removeTask, data } = params;
+    const { data, updateTaskText, updateTaskColor, updateTaskState, removeTask } = params;
 
     if (data.length === 0) {
         return (
@@ -14,7 +13,11 @@ export function TaskList(params) {
 
     return (
         <div className="list">
-            {data.map((item, index) => <Task key={index} data={item} removeTask={removeTask} />)}
+            {data.map(item => <Task key={item.id} data={item}
+                updateTaskText={updateTaskText}
+                updateTaskColor={updateTaskColor}
+                updateTaskState={updateTaskState}
+                removeTask={removeTask} />)}
         </div>
     );
 }
